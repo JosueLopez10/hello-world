@@ -1,0 +1,40 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link href="camara.css" media="(min-width:380px)"  type="text/css" rel="stylesheet">
+<title>Cámara</title>
+<script type="text/javascript" src="jquery-2.2.0.min.js"></script>
+<script type="text/javascript" src="cordova.js"></script>
+<script type="text/javascript" src="interact.min.js"></script>
+<style>
+  *{
+    -webkit-touch-callout: none; /* anula el efecto visual del touch prolongado sobre el objeto */
+
+    user-select: none; /* user-select, hace el objeto no seleccionable */
+
+    -webkit-tap-highlight-color: rgba(0,0,0,0); /* anula el feedback de color al hacer tap en un link */
+    -webkit-tap-highlight-color: transparent; /* similar anterior en algunos android */
+  }
+</style>
+<script type="text/javascript">
+ function onDeviceReady() {};
+ document.addEventListener("deviceready", onDeviceReady, false);
+ var t;
+ function abrir_camara(){ navigator.camera.getPicture();};
+ $(document).ready(function(){
+	 $("#camara").on('click',abrir_camara);
+ })
+</script>
+</head>
+
+<body>
+<div id="box">
+<h1>Abrir cámara</h1>
+</div>
+<h3>Josué López</h3>
+<button id="camara">
+	<object type:"imaage/svg+xml" data="camara.svg" height="50px" width="50px"></object>
+</button>
+</body>
+</html>
